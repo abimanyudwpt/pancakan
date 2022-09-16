@@ -192,7 +192,7 @@ class _LoginState extends State<Login> {
       _onWidgetDidBuild(() {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text('NIK Tidak Boleh Kosong'),
+            content: Text('NIK Tidak Boleh Kosongtes'),
             backgroundColor: Colors.red,
           ),
         );
