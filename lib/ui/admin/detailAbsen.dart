@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:pancakan/api/apiAbsen.dart';
 import 'package:pancakan/api/apiJadwal.dart';
+import 'package:pancakan/api/apiKrama.dart';
 import 'package:pancakan/model/mAbsen.dart';
+import 'package:pancakan/model/mKrama.dart';
 import 'package:pancakan/ui/auth/login.dart';
 import 'package:pancakan/ui/admin/detailJadwal.dart';
 // import './ui/model/launcher.dart';
@@ -21,6 +23,14 @@ class DetailAbsen extends StatefulWidget {
 }
 
 class _DetailAbsenState extends State<DetailAbsen> {
+  late List<DataKrama> krama = [];
+  void getKrama() async {
+    final response = await ApiAbsen.getKrama();
+    setState(() {
+      krama = response.toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,8 +102,7 @@ class _DetailAbsenState extends State<DetailAbsen> {
                                       children: <Widget>[
                                         ListTile(
                                           title: Text(
-                                            'Nama' +
-                                                absenItem.tglAbsen.toString(),
+                                            absenItem.idKegiatan.toString(),
                                             maxLines: 2,
                                             overflow: TextOverflow.ellipsis,
                                             style: const TextStyle(

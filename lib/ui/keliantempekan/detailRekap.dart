@@ -3,16 +3,17 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:pancakan/api/apiJadwal.dart';
+import 'package:pancakan/model/mRekapAbsensi.dart';
 import 'package:pancakan/ui/auth/login.dart';
 import 'package:pancakan/ui/admin/detailJadwal.dart';
 import 'package:pancakan/ui/admin/exeJadwal.dart';
 // import './ui/model/launcher.dart';
-import 'package:pancakan/model/m_tester.dart';
+import 'package:pancakan/model/mTester.dart';
 
 class DetailRekap extends StatefulWidget {
-  final Post post;
+  final RekapAbsensi rekapAbsensi;
 
-  const DetailRekap({Key? key, required this.post}) : super(key: key);
+  const DetailRekap({Key? key, required this.rekapAbsensi}) : super(key: key);
 
   @override
   _DetailRekapState createState() => _DetailRekapState();
@@ -23,7 +24,7 @@ class _DetailRekapState extends State<DetailRekap> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.post.giat),
+          title: Text(widget.rekapAbsensi.kramaId.toString()),
           actions: [
             IconButton(
               icon: Icon(Icons.search),
@@ -47,19 +48,18 @@ class _DetailRekapState extends State<DetailRekap> {
                       padding: EdgeInsets.all(0),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
+                        children: const <Widget>[
                           ListTile(
                             title: Text(
                               'Nama Kegiatan',
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
                                   overflow: TextOverflow.ellipsis),
                             ),
-                            subtitle: Text(
-                                'Tanggal : ' + widget.post.tanggal.toString()),
+                            subtitle: Text('Tanggal : '),
                             trailing: Text('Status Absen'),
                           )
                         ],

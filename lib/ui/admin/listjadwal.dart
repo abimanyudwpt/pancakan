@@ -6,7 +6,6 @@ import 'package:pancakan/model/message.dart';
 import 'package:pancakan/ui/auth/login.dart';
 import 'package:pancakan/ui/admin/detailJadwal.dart';
 import 'package:pancakan/ui/admin/exeJadwal.dart';
-import 'package:pancakan/ui/admin/editJadwal.dart';
 import 'package:pancakan/model/mJadwal.dart';
 import 'package:pancakan/ui/side.dart';
 import 'package:intl/intl.dart';

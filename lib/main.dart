@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-// import 'package:pancakan/ui/auth/login.dart';
-import 'package:pancakan/ui/admin/listjadwal.dart';
+import 'package:pancakan/ui/auth/login.dart';
+// import 'package:pancakan/ui/admin/listjadwal.dart';
 // import 'package:pancakan/ui/keliantempekan/dashboard.dart';
 //import 'package:pancakan/ui/keliantempekan/detailRekap.dart';
 // import 'package:pancakan/ui/admin/injadwal.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // ignore: prefer_const_constructors
-      home: ListJadwal(),
+      home: Login(),
     );
   }
 }

@@ -41,12 +41,12 @@ class Jadwal {
         "id_kegiatan": idKegiatan,
         "nm_kgtn": nmKgtn,
         "tmpt": tmpt,
-        "tgl": tgl,
+        "tgl": tgl.toString(),
         "jam": jam,
         "interval": interval,
         "peserta": peserta,
-        "created_at": createdAt,
-        "updated_at": updatedAt,
+        "created_at": createdAt.toString(),
+        "updated_at": updatedAt.toString(),
       };
 
   @override

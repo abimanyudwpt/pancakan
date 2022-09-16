@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, body_might_complete_normally_nullable
 
-import 'package:pancakan/model/m_tester.dart';
+import 'package:pancakan/model/mTester.dart';
 import 'package:http/http.dart' as http;
 
 class Api {

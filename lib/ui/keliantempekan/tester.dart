@@ -6,7 +6,7 @@ import 'package:pancakan/api/apiTest.dart';
 import 'package:pancakan/ui/auth/login.dart';
 import 'package:pancakan/ui/admin/detailJadwal.dart';
 import 'package:pancakan/ui/admin/exeJadwal.dart';
-import 'package:pancakan/model/m_tester.dart';
+import 'package:pancakan/model/mTester.dart';
 import 'package:pancakan/ui/keliantempekan/detailRekap.dart';
 
 class Tester extends StatefulWidget {

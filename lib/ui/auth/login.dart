@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pancakan/ui/admin/listjadwal.dart';
-import 'package:pancakan/ui/keliantempekan/dashboard.dart';
+// import 'package:pancakan/ui/keliantempekan/dashboard.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -131,30 +131,7 @@ class _LoginState extends State<Login> {
                                               builder: (context) =>
                                                   const ListJadwal()));
                                     },
-                                    child: const Text("Login admin",
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 16)),
-                                    color: Colors.blue,
-                                    shape: const RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(50))),
-                                    padding: const EdgeInsets.all(16),
-                                  )),
-                              Container(
-                                  margin: const EdgeInsets.only(top: 30),
-                                  width: MediaQuery.of(context).size.width,
-                                  child: MaterialButton(
-                                    onPressed: () {
-                                      // loginValidation(context);
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  const Dashboard()));
-                                    },
-                                    child: const Text("Login Kelian Tempekan",
+                                    child: const Text("Login",
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w700,

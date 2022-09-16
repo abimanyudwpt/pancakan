@@ -1,4 +1,4 @@
-// ignore_for_file: body_might_complete_normally_nullable, unused_local_variable, file_names
+// ignore_for_file: body_might_complete_normally_nullable, unused_local_variable, file_names, avoid_print
 
 import 'dart:convert';
 
@@ -7,7 +7,8 @@ import 'package:pancakan/model/mJadwal.dart';
 import 'package:pancakan/model/message.dart';
 
 class ApiJadwal {
-  static String host = 'http://192.168.43.198/api-sipa/public';
+  static String host = 'http://192.168.1.10/api-sipa/public';
+  // static String token = '1|mXcZT7R78C5HghM2yGFBpcvpXkVzfHGK8Fc5w3Jo';
 
   Future<List<Jadwal>> getJadwal() async {
     Uri urlApi = Uri.parse('$host/api/Jadwal');
@@ -23,15 +24,15 @@ class ApiJadwal {
 
   static Future<Message> saveJadwal(idKegiatan, jadwal) async {
     try {
-      // var url = Uri.parse('$host/api/Jadwal');
-      // if (idKegiatan != 0) {
-      //   url = Uri.parse('$host/api/Jadwal/' + idKegiatan.toString());
-      // }
+      var url = Uri.parse('$host/api/Jadwal');
+      if (idKegiatan != 0) {
+        url = Uri.parse('$host/api/Jadwal/' + idKegiatan.toString());
+      }
 
-      var url = 'http://192.168.43.198/api-sipa/public/api/Jadwal';
+      // var url = 'http://192.168.1.10/api-sipa/public/api/Jadwal';
       var headers = {'Content-Type': 'application/json'};
       var body = jsonEncode({
-        'nmKgtn': jadwal['nmKgtn'],
+        'nm_kgtn': jadwal['nmKgtn'],
         'tmpt': jadwal['tmpt'],
         'tgl': jadwal['tgl'],
         'jam': jadwal['jam'],
@@ -40,7 +41,7 @@ class ApiJadwal {
       });
 
       var response = await http.post(
-        Uri.parse(url),
+        url,
         headers: headers,
         body: body,
       );
@@ -58,10 +59,10 @@ class ApiJadwal {
       if (response.statusCode == 200) {
         // final respStr = await response.stream.bytesToString();
         // return Message.fromJson(jsonDecode(respStr));\
-        print('succes');
-        return Message(success: true, message: 'sucess');
+        print('succces');
+        return Message(success: true, message: 'success');
       } else {
-        return Message(success: false, message: 'err Request');
+        return Message(success: false, message: 'Error Request');
       }
     } catch (e) {
       Message responseRequest =
@@ -79,11 +80,11 @@ class ApiJadwal {
         return Message.fromJson(jsonDecode(response.body));
       } else {
         return Message(
-            success: false, message: 'err Periksa Kembali Inputan anda');
+            success: false, message: 'Error Periksa Kembali Inputan anda');
       }
     } catch (e) {
       Message responseRequest =
-          Message(success: false, message: 'error 11 caught: $e');
+          Message(success: false, message: 'Berhasil di hapus');
       return responseRequest;
     }
   }
